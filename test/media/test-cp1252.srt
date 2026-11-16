@@ -1,0 +1,36 @@
+1
+00:00:01,000 --> 00:00:03,500
+Voici le lapin : élégant, très à l'aise.
+
+2
+00:00:04,000 --> 00:00:06,500
+<i>Pendant ce temps, à la forêt…</i>
+
+3
+00:00:07,000 --> 00:00:09,500
+Ça commence ! Où est l'œuf ?
+Deuxième ligne, garçon.
+
+4
+00:00:10,000 --> 00:00:12,500
+<b>Gras</b>, <u>souligné</u> et <font color="red">rouge supprimé</font>
+
+5
+00:00:13,000 --> 00:00:15,500
+Cœur, sœur, Noël, maïs, déjà-vu.
+
+6
+00:00:16,000 --> 00:00:18,500
+<i>« Guillemets » et 3 € de côté</i>
+
+7
+00:00:19,000 --> 00:00:21,500
+Fenêtre, hôpital, août, être.
+
+8
+00:00:22,000 --> 00:00:24,500
+Avant-dernière réplique.
+
+9
+00:00:25,000 --> 00:00:28,500
+<i>Fin du test - à bientôt !</i>

@@ -1,0 +1,15 @@
+/* Hôte de l'overlay (le contenu est dans un Shadow DOM fermé, voir content.js).
+   La position/taille est écrite en style inline « !important » par content.js. */
+subsext-overlay.subsext-host {
+  position: fixed !important;
+  pointer-events: none !important; /* ne bloque jamais le lecteur */
+  z-index: 2147483647 !important; /* au-dessus de tout */
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}

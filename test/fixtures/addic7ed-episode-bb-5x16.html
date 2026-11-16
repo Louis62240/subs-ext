@@ -1,0 +1,2287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta name="description" content="Breaking Bad - 05x16 - Felina subtitles. Download subtitles in English from the source. " />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		 Subtitle Breaking Bad - 05x16 - Felina subtitles from the source! - Addic7ed.com
+	</title>
+	<link href="https://www.addic7ed.com/css/wikisubtitles.css" rel="stylesheet" title="default" type="text/css" />
+	<link rel="SHORTCUT ICON" href="https://www.addic7ed.com/favicon.ico" /> 
+	<link rel="stylesheet" href="https://www.addic7ed.com/css/circle.css">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.addic7ed.com/css/uploadbutton.css">	
+	<script type="text/javascript" src="https://www.addic7ed.com/js/mootools-core-1.4.5-full-compat.js"></script>
+	<script type="text/javascript" src="https://www.addic7ed.com/js/mootools-more-1.4.0.1.js"></script>
+	<script type="text/javascript" src="https://www.addic7ed.com/js/moostarrating.js"></script>
+  <style>
+ @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+    .face-button {
+
+      height: 24px;
+      display: inline-block;
+      border: 3px solid #4c956c;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      color: #e43;
+      overflow: hidden;
+      width: 230px;
+      
+      .icon {
+        margin-right: 6px;
+      }
+      
+      .face-primary,
+      .face-secondary {
+        display: block;
+        padding: 0 32px;
+        line-height: 24px;
+        transition: margin .4s;
+      }
+      
+      .face-primary {
+        background-color: #4c956c;
+        color: #fff;
+      }
+      
+      &:hover .face-primary {
+        margin-top: -24px;
+      }
+    }
+
+</style>
+	<script type="text/javascript">	function changeAppLang()
+	{
+		value = $("comboLang").value;
+		if (value!='en')
+		{
+			window.location= "/changeapplang.php?applang=" + value;
+		}
+	}
+	
+	function showChange(showID)
+	{
+		if (showID==0)
+			valor = $("qsShow").value;
+		else
+			valor = showID;
+		if (valor>0)
+		{
+			$("qsSeason").innerHTML = '<img title="Please wait, loading" alt="Loading" src="https://www.addic7ed.com/images/loader.gif" />';
+			$("qsEp").innerHTML = '';
+			$("qssShow").innerHTML = '';
+
+			var myRequest = new Request({
+			    url: '/ajax_getSeasons.php',
+			    method: 'get',
+			    onSuccess: function(responseText){
+				$("qsSeason").innerHTML = responseText;
+			    }
+			});
+			myRequest.send('showID='+valor);
+		}
+	}
+	
+	function seasonChange(showID, season)
+	{
+	
+		valor = showID;
+
+		if (valor>0)
+		{
+			$("qsEp").innerHTML = '<img title="Please wait, loading" alt="Loading" src="https://www.addic7ed.com/images/loader.gif" />';
+			
+			if (season==-1)
+				myseason = $("qsiSeason").value;
+			else
+				myseason=season;
+                        var myRequest = new Request({
+                            url: '/ajax_getEpisodes.php',
+                            method: 'get',
+                            onSuccess: function(responseText){
+                                $("qsEp").innerHTML = responseText; 
+		            }
+                        });
+                        myRequest.send('showID='+valor+'&season='+myseason); 
+		}
+
+	}
+	
+	function changeEp()
+	{
+		var valor = $("qsiEp").value;
+		window.location = '/re_episode.php?ep=' + valor;
+	}
+	
+	function qsClear()
+	{
+		$("qssShow").innerHTML = '<img title="Please wait, loading" alt="Loading" src="https://www.addic7ed.com/images/loader.gif" />';
+		$("qsSeason").innerHTML = '&nbsp;';
+		$("qsEp").innerHTML = '&nbsp;';
+		
+		var myRequest = new Request({
+		    url: '/ajax_getShows.php',
+		    method: 'get',
+		    onSuccess: function(responseText){
+			$("qssShow").innerHTML = responseText;
+		    }
+		});
+		myRequest.send('showID='+valor);		
+	}
+</script>
+	<script type="text/javascript">
+		function saveFavorite(subid,langid,hi)
+		{
+	                return;
+		alert('Now following!');
+		/*        new Ajax('/ajax_saveFavorite.php?subid='+subid+'&langid='+langid+'&hi='+hi, {
+				method: 'get',
+				update: $("episodes")   
+			}).request();
+		*/	
+
+		var myRequest = new Request({
+		    url: '/ajax_saveFavorite.php',
+		    method: 'get'
+		});
+		myRequest.send('subid='+subid+'&langid='+langid+'&hi='+hi);
+		}
+		
+	</script>
+
+	
+	</head>
+
+	<body>
+	
+<center>
+<br />
+<table border="0">
+<tr>
+  <td rowspan="9"><a href="/"><img width="350" height="111" src="https://www.addic7ed.com/images/addic7edlogonew.png"  border="0"  title="Addic7ed.com - Quality Subtitles for TV Shows and movies" alt="Addic7ed.com - Quality Subtitles for TV Shows and movies" /></a></td>
+</tr>
+<tr><td align="center" colspan="2">
+<h1><small>Download free subtitles for TV Shows and Movies.</small>&nbsp; 
+<select name="applang" class="inputCool" onchange="changeAppLang();" id="comboLang"><option value="ar">Arabic</option><option value="ca">Catala</option><option selected="selected" value="en">English</option><option value="eu">Euskera</option><option value="fr">French</option><option value="ga">Galician</option><option value="de">German</option><option value="gr">Greek</option><option value="hu">Hungarian</option><option value="it">Italian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="br">Portuguese (Brazilian)</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="es">Spanish</option><option value="se">Swedish</option></select></h1>
+</td></tr>
+<tr><td align="center" colspan="2">
+<div id="hBar">
+			  <ul>
+				<li><a class="button white" href="/newaccount.php">Signup</a></li>
+				<li><a class="button white" href="/login.php">Login</a></li>
+				<li><a class="button white" href="/shows.php">Shows</a></li>
+				<li><a class="button white" href="http://www.sub-talk.net/topic/6961-recruitment-syncers-only-not-translators/">Join the team</a></li>
+				<li><a class="button white" href="http://www.sub-talk.net">Forum</a></li>
+			  </ul>
+			  </div>
+</td></tr> 
+
+<tr>
+  <td><a href="https://www.patreon.com/bePatron?u=7679598"><img width="170px" height="40px" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" /></a>
+</td><td>
+	
+    <a href="http://twitter.com/addic7ed" target="_blank"><img width="32" height="32" src="https://www.addic7ed.com/images/twitter_right.png" alt="Twitter" border="0" /></a>
+	
+
+
+  </td>
+ </tr>
+ 
+<!--  <tr>
+   <td></td>
+<td>       
+
+         <div alt="Donation Status" class="c100 p0 small">
+                    <span><a title="Donation Status" href="https://www.addic7ed.com/contact.php">0%</a></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div></td>
+ </tr>
+-->
+</table>
+</center>
+
+<center>
+
+<!--[if lt IE 7]>
+ <style type="text/css">
+ div, img { behavior: url(https://www.addic7ed.com/js/iepngfix.htc) }
+ </style>
+<![endif]-->
+<!--
+    This file is part of wikisubtitles.
+
+    wikisubtitles is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Wikisubtitles is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="50%" align="center">    
+    <a href="javascript:qsClear();"><img width="24" height="24" title="Clear Search" alt="Clear Search Terms" src="https://www.addic7ed.com/images/view.png" border="0" /></a> <span id="qssShow"><b>
+Quick search    </b>
+  &nbsp;		<script type="text/javascript">
+			window.addEvent('domready', function() { showChange(240 ); } );
+		</script>
+    
+    </span>
+    <span id="qsSeason">&nbsp;
+<script type="text/javascript">window.addEvent('domready', function() { seasonChange(240,5) } );</script>    
+    </span> 
+	&nbsp;
+    <span id="qsEp">&nbsp;</span></td>
+    <td><form id="form1" name="form1" method="get" action="/search.php">
+      <div align="center">
+Search subtitle      &nbsp;
+        <input name="search" type="text" id="search" size="20" /> &nbsp;
+<input name="Submit" type="submit" class="coolBoton" value="Search" />      </div>
+    </form>
+
+    </td>
+  </tr>
+</table>
+<br><center>
+
+      </center>
+
+
+
+<center>
+
+      
+</center>
+
+
+		<br />
+		<script type="text/javascript">
+			function saveWatched(subid,season,episode)
+			{
+			
+				alert("Login before using this feature");
+				return false;
+			var myRequest = new Request({
+			    url: '/ajax_saveWatched.php',
+			    method: 'get',
+			});
+			myRequest.send('subid='+subid+'&season='+season+'&episode='+episode);
+			}
+			
+			function saveShowRating(tvrage,rating)
+			{
+				alert("Login before using this feature");                return false;
+			var myRequest = new Request({
+			    url: '/ajax_saveShowRating.php',
+			    method: 'get',
+			});
+			myRequest.send('tvrage='+tvrage+'&rating='+rating);
+
+			}
+		</script>
+
+		<script type='text/javascript'>//<![CDATA[ 
+		window.addEvent('load', function() {
+		// Default images folder definition. You will use your own.
+		MooStarRatingImages.defaultImageFolder = 
+		    'https://www.addic7ed.com/img/';
+
+		// ================================================================
+
+		// Advanced options
+		var advancedRating = new MooStarRating({
+		    form: 'advanced',
+		    radios: 'my_rating',                // Radios name
+		    half: true,                         // That means one star for two values!
+		    imageEmpty: 'star_boxed_empty.png', // Different image
+		    imageFull:  'star_boxed_full.png',  // Different image
+		    imageHover: 'star_boxed_hover.png', // Different image
+		    width: 17,                          // One pixel bigger
+		    tip: '<i>[VALUE] / 10.0</i>', // Mouse rollover tip
+		    tipTarget: $('htmlTip'),            // Tip element
+		    tipTargetType: 'html'               // Tip type, now is HTML, not only text
+		});
+
+		// ================================================================
+
+		// Click callback function
+		function myCallback(value) {
+			saveShowRating(0,value)
+		}
+
+		// Click event
+		advancedRating.addEvent('click', myCallback);
+		});//]]>  
+
+		</script>
+
+		<br />
+		<div id="container">
+		<table class="tabel70" border="0">
+		    <tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+				<table  border="0" align="center" class="tabel95">
+				  <tr>
+				   <td width="50%"><div align="left"><span class="titulo">
+				    Breaking Bad - 05x16 - Felina <small>Subtitle</small>
+				    </span></div>
+				    </td>
+				    <td width="20%">
+				    </td>		
+				    <td width="30%" rowspan="5"><div valign="top">
+					<table class="tabel" width="40%" border="0" align="center">
+					      <tr>
+						<td><img class="resize" border="0" src="https://www.addic7ed.com/images/showimages/81189-g13.jpg" />
+						</td>
+					      </tr>
+					</table></div>   
+				    </td>
+				  </tr>
+
+				  <tr>
+				    <td><img src="https://www.addic7ed.com/images/folder_image.png" width="16" height="16" />&nbsp;<a href="/show/240">Breaking Bad</a>, <a href='/season/240/5'>Season 5</a>, Episode 16 subtitles
+				    </td>
+				    <td>
+					</td>		
+				  </tr>
+				  
+				  <tr>
+				    <td><a href="https://www.tvhoard.com"><font color=red>Episode list and air dates</font></a>
+				   </td>
+				    <td>
+				  </td></tr><tr><td>	</td></tr>
+			  <tr>
+			   <td>
+			    </td>		
+			  </tr>
+
+			  <tr>
+			    <td>
+			     <img src="https://www.addic7ed.com/images/download.png" width="16" height="16" align="absmiddle" /> 
+				157958
+			    </td>
+			    <td>
+			    </td>		
+			  </tr>
+			  <tr>
+			   <td><a href="/show/240">Multi Download</a></td>
+			    <td>
+			    </td>
+			   <td>
+
+							  </td>
+			</tr>
+		</table>
+		</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr> <!-- table footer -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com//images/bl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com//images/br.gif" /></td>
+		</tr>
+		</table>
+		</div>
+		<p>
+
+		<script type="text/javascript">
+			function sortChange()
+			{
+				var sortCheck = document.getElementById("sort_versions");
+				window.location='/serie/Breaking Bad/5/16/'+sortCheck.checked;
+			}	
+			function filterChange()
+			{
+				var filter = document.getElementById("filterlang");
+				window.location='/serie/Breaking Bad/5/16/'+filter.options[filter.selectedIndex].value;
+			}	
+		</script><b>Sort versions alphabetically by language</b><INPUT TYPE="CHECKBOX" id="sort_versions" onclick="javascript:sortChange();" checked="yes" > - Filter Language: <select id="filterlang" name="filterlang" class="inputCool" onchange="javascript:filterChange();" >
+		<option value="0">All</option><option value="52">Albanian</option><option value="38">Arabic</option><option value="50">Armenian</option><option value="48">Azerbaijani</option><option value="47">Bengali</option><option value="44">Bosnian</option><option value="35">Bulgarian</option><option value="64">Cantonese</option><option value="12">Català</option><option value="41">Chinese (Simplified)</option><option value="24">Chinese (Traditional)</option><option value="31">Croatian</option><option value="14">Czech</option><option value="30">Danish</option><option value="17">Dutch</option><option value="1">English</option><option value="54">Estonian</option><option value="13">Euskera</option><option value="28">Finnish</option><option value="8">French</option><option value="53">French (Canadian)</option><option value="15">Galego</option><option value="11">German</option><option value="27">Greek</option><option value="23">Hebrew</option><option value="55">Hindi</option><option value="20">Hungarian</option><option value="56">Icelandic</option><option value="37">Indonesian</option><option value="7">Italian</option><option value="32">Japanese</option><option value="66">Kannada</option><option value="61">Klingon</option><option value="42">Korean</option><option value="57">Latvian</option><option value="58">Lithuanian</option><option value="49">Macedonian</option><option value="40">Malay</option><option value="67">Malayalam</option><option value="62">Marathi</option><option value="29">Norwegian</option><option value="43">Persian</option><option value="21">Polish</option><option value="9">Portuguese</option><option value="10">Portuguese (Brazilian)</option><option value="26">Romanian</option><option value="19">Russian</option><option value="39">Serbian (Cyrillic)</option><option value="36">Serbian (Latin)</option><option value="60">Sinhala</option><option value="25">Slovak</option><option value="22">Slovenian</option><option value="4">Spanish</option><option value="69">Spanish (Argentina)</option><option value="6">Spanish (Latin America)</option><option value="5">Spanish (Spain)</option><option value="18">Swedish</option><option value="68">Tagalog</option><option value="59">Tamil</option><option value="63">Telugu</option><option value="46">Thai</option><option value="16">Turkish</option><option value="51">Ukrainian</option><option value="45">Vietnamese</option><option value="65">Welsh</option></select><br>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/433330'>zuurpruimpje</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Dutch<a href="javascript:saveFavorite(79601,17,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/10">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Dutch
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 8771 Downloads · 477 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=10&amp;lang=17" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version BluRay-DEMAND, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=10&amp;lang=17" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/492773'>thebestdarter</a>  4552 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Dutch<a href="javascript:saveFavorite(79601,17,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/19">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Dutch
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 2837 Downloads · 370 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=19&amp;lang=17" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=19&amp;lang=17" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/3522'>n17t01</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Series Finale | Works with REPACK ASAP, AFG, HDTV mSD<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.addic7ed.com"><img height="35" width="100" src="https://www.addic7ed.com/friends/addic7ed.png" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,1)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/1">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img title="Hearing Impaired" src="https://www.addic7ed.com/images/hi.jpg" width="24" height="24" />0 times edited · 50164 Downloads · 696 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=1&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;<tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Russian<a href="javascript:saveFavorite(79601,19,1)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/updated/19/79601/1">  
+        <div class="face-primary">
+          <span class="icon fa fa-download"></span>
+        Download
+        </div>
+       <div class="face-secondary">
+        <span class="icon fa fa-flag"></span>
+        Russian
+       </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img title="Hearing Impaired" src="https://www.addic7ed.com/images/hi.jpg" width="24" height="24" />1 times edited · 610 Downloads · 696 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=1&amp;lang=19" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;edited  3045 days ago
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="7">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td>&nbsp;</td>
+		    <td colspan="2"><span class="newsDate">
+		    Translated on Addic7ed.com by
+		    </span></td>
+		    <td colspan="5" class="newsDate"><a href="/user/449543" >csharp</a> (100.0%), </table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version WEB-DL-BS, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=1&amp;lang=19" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/299833'>explosiveskull</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				n17t01's version, resynced for WEB-DL<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,1)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/7">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img title="Hearing Impaired" src="https://www.addic7ed.com/images/hi.jpg" width="24" height="24" />0 times edited · 7037 Downloads · 696 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=7&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=7&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/3522'>n17t01</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Series Finale | Works with REPACK ASAP, AFG, HDTV mSD<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.addic7ed.com"><img height="35" width="100" src="https://www.addic7ed.com/friends/addic7ed.png" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/0">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 33857 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=0&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;<tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">German<a href="javascript:saveFavorite(79601,11,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/updated/11/79601/0">  
+        <div class="face-primary">
+          <span class="icon fa fa-download"></span>
+        Download
+        </div>
+       <div class="face-secondary">
+        <span class="icon fa fa-flag"></span>
+        German
+       </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />38 times edited · 2654 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=0&amp;lang=11" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;edited  4794 days ago
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="7">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td>&nbsp;</td>
+		    <td colspan="2"><span class="newsDate">
+		    Translated on Addic7ed.com by
+		    </span></td>
+		    <td colspan="5" class="newsDate"><a href="/user/433758" >jayray32</a> (1.3%), <a href="/user/450724" >Cabanga</a> (5.3%), <a href="/user/453037" >areon</a> (0.5%), <a href="/user/439749" >godfather2109</a> (0.2%), <a href="/user/450724" >Cabanga</a> (5.3%), <a href="/user/433631" >abloo</a> (78.2%), <a href="/user/433631" >abloo</a> (78.2%), <a href="/user/450811" >koyote81</a> (14.6%), <tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Portuguese (Brazilian)<a href="javascript:saveFavorite(79601,10,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/updated/10/79601/0">  
+        <div class="face-primary">
+          <span class="icon fa fa-download"></span>
+        Download
+        </div>
+       <div class="face-secondary">
+        <span class="icon fa fa-flag"></span>
+        Portuguese (Brazilian)
+       </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />244 times edited · 8287 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=0&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;edited  4787 days ago
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="7">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td>&nbsp;</td>
+		    <td colspan="2"><span class="newsDate">
+		    Translated on Addic7ed.com by
+		    </span></td>
+		    <td colspan="5" class="newsDate"><a href="/user/109279" >m4fioso</a> (0.6%), <a href="/user/395260" >ruanmed</a> (0.5%), <a href="/user/276626" >Perciz</a> (19.9%), <a href="/user/225718" >linflux</a> (0.5%), <a href="/user/436285" >pedr6uilherme</a> (0.6%), <a href="/user/277789" >foxdh</a> (5.6%), <a href="/user/397912" >craneee</a> (9.6%), <a href="/user/442349" >vekner</a> (0.8%), <a href="/user/444926" >urly</a> (5.3%), <a href="/user/298483" >vudulp</a> (3.9%), <a href="/user/203152" >flavioinj</a> (5.0%), <a href="/user/441056" >reyap</a> (0.9%), <a href="/user/125269" >VictorDSoBom</a> (6.0%), <a href="/user/345617" >roodrigoooh</a> (0.2%), <a href="/user/12264" >Viviz</a> (11.9%), <a href="/user/63185" >guizinhow</a> (5.8%), <a href="/user/126342" >Tharkus</a> (0.2%), <a href="/user/433082" >thiagoip</a> (16.5%), <a href="/user/106378" >Dedeco</a> (1.9%), <a href="/user/301955" >j3r3mias</a> (4.4%), </table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version WEB-DL-BS, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=0&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/299833'>explosiveskull</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				n17t01's version, resynced for WEB-DL<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/6">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 4223 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=6&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version Blu-ray, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=6&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/17645'>Kosire</a>  4744 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Retail.<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.addic7ed.com"><img height="35" width="100" src="https://www.addic7ed.com/friends/addic7ed.png" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/18">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 8097 Downloads · 472 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=18&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version TSV.BDRip, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=18&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/10657'>chamallow</a>  4352 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Subtitle file collected, corrected and if necessary adapted by TRONAR for "Breaking Bad Season 1, 2, 3, 4 & 5 + Extras BDRip DVDRip HDTV TSV"<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">English<a href="javascript:saveFavorite(79601,1,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/21">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    English
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 2903 Downloads · 636 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=21&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version 720p.1080p.WEB-DL, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=21&amp;lang=1" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/625555'>FABIOBO</a>  3719 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				La Fabrique<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://sous-titres.eu"><img height="35" width="100" src="https://www.addic7ed.com/friends/sous-titres-eu.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">French<a href="javascript:saveFavorite(79601,8,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/22">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    French
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 867 Downloads · 474 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=22&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version 720p.IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=22&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/625555'>FABIOBO</a>  3719 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				La Fabrique<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://sous-titres.eu"><img height="35" width="100" src="https://www.addic7ed.com/friends/sous-titres-eu.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">French<a href="javascript:saveFavorite(79601,8,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/23">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    French
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 275 Downloads · 474 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=23&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version REPACK.ASAP, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=23&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/625555'>FABIOBO</a>  3719 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				La Fabrique<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://sous-titres.eu"><img height="35" width="100" src="https://www.addic7ed.com/friends/sous-titres-eu.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">French<a href="javascript:saveFavorite(79601,8,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/24">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    French
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 186 Downloads · 474 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=24&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version DEMAND, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=24&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/625555'>FABIOBO</a>  3719 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				La Fabrique<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://sous-titres.eu"><img height="35" width="100" src="https://www.addic7ed.com/friends/sous-titres-eu.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">French<a href="javascript:saveFavorite(79601,8,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/25">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    French
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 303 Downloads · 474 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=25&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version FPS, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=25&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/625555'>FABIOBO</a>  3719 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				DVDRip.Z2<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://sous-titres.eu"><img height="35" width="100" src="https://www.addic7ed.com/friends/sous-titres-eu.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">French<a href="javascript:saveFavorite(79601,8,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"> <a class="face-button" href="/original/79601/26">
+                <div class="face-primary">
+          <span class="icon fa fa-cloud"></span>
+        Original
+        </div>
+       <div class="face-secondary">
+        <span class="icon fa fa-hdd-o"></span>
+        French
+       </div></a>
+				<a class="face-button" class="buttonDownload" href="/updated/8/79601/26">
+                <div class="face-primary">
+          <span class="icon fa fa-cloud"></span>
+        Most Updated
+        </div>
+       <div class="face-secondary">
+        <span class="icon fa fa-hdd-o"></span>
+        French
+       </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />2 times edited · 216 Downloads · 456 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=26&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;edited  3719 days ago
+		    </td>
+		  </tr></table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version ASAP, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=26&amp;lang=8" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/46956'>Alice</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href=""><img height="35" width="100" src="https://www.addic7ed.com/friends/" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">German<a href="javascript:saveFavorite(79601,11,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/13">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    German
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 335 Downloads · 627 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=13&amp;lang=11" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version 720p Web-DL, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=13&amp;lang=11" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/46956'>Alice</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href=""><img height="35" width="100" src="https://www.addic7ed.com/friends/" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">German<a href="javascript:saveFavorite(79601,11,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/14">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    German
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 320 Downloads · 628 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=14&amp;lang=11" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version REPACKASAP, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=14&amp;lang=11" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/142745'>R3b3L</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				BB BREAKING BAD. *R3b3loi Team* Tv Series Official Release.<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Greek<a href="javascript:saveFavorite(79601,27,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/4">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Greek
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 1544 Downloads · 448 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=4&amp;lang=27" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version REPACK-ASAP, Duration: 304.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=4&amp;lang=27" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/15884'>Kal-Earth2</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				should work with 720p IMMERSE<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href=""><img height="35" width="100" src="https://www.addic7ed.com/friends/" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Italian<a href="javascript:saveFavorite(79601,7,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/9">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Italian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 958 Downloads · 550 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=9&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version WEB-DL, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=9&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/15884'>Kal-Earth2</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href=""><img height="35" width="100" src="https://www.addic7ed.com/friends/" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Italian<a href="javascript:saveFavorite(79601,7,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/12">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Italian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 352 Downloads · 550 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=12&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version BDRip.x264-DEMAND, Duration: 282.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=12&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/15884'>Kal-Earth2</a>  4750 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Works with 720p.BluRay.x264-DEMAND<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href=""><img height="35" width="100" src="https://www.addic7ed.com/friends/" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Italian<a href="javascript:saveFavorite(79601,7,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/17">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Italian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 568 Downloads · 550 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=17&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version HDTV, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=17&amp;lang=7" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/299833'>explosiveskull</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Works with: ASAP, IMMERSE, AFG, mSD, mRS & BWBP<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.subscene.com"><img height="35" width="100" src="https://www.addic7ed.com/friends/subscene.gif" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Persian<a href="javascript:saveFavorite(79601,43,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/3">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Persian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 365 Downloads · 621 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=3&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version WEB-DL, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=3&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/299833'>explosiveskull</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Works with: BS & mRS<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.subscene.com"><img height="35" width="100" src="https://www.addic7ed.com/friends/subscene.gif" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Persian<a href="javascript:saveFavorite(79601,43,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/8">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Persian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 165 Downloads · 621 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=8&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version ASAP,AFG,HDTV,mSD,, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=8&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/433307'>ehsanblade</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				www.ftvs.ir<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Persian<a href="javascript:saveFavorite(79601,43,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/5">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Persian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 183 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=5&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version REPACK-ASAP, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=5&amp;lang=43" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/203152'>flavioinj</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				REPACK ASAP, IMMERSE, AFG, mSD<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.united4ever.tv/"><img height="35" width="100" src="https://www.addic7ed.com/friends/UnitedLogo.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Portuguese (Brazilian)<a href="javascript:saveFavorite(79601,10,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/15">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Portuguese (Brazilian)
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 1742 Downloads · 472 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=15&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version 720p Web-DL, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=15&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/46956'>Alice</a>  4793 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top"><a href="http://www.united4ever.tv/"><img height="35" width="100" src="https://www.addic7ed.com/friends/UnitedLogo.jpg" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Portuguese (Brazilian)<a href="javascript:saveFavorite(79601,10,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/16">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Portuguese (Brazilian)
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 634 Downloads · 472 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=16&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=16&amp;lang=10" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/444914'>RichardNasta</a>  4795 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				Merge pe urmatoarele variante: IMMERSE, mSD, ASAP si AFG pentru FastSubtitlesTeam<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Romanian<a href="javascript:saveFavorite(79601,26,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/2">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Romanian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img title="Corrected" src="https://www.addic7ed.com/images/bullet_go.png" width="24" height="24" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 1113 Downloads · 590 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=2&amp;lang=26" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version ASAP-IMMERSE, Duration: 0.00 </td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=2&amp;lang=26" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/420862'>TakeOverControl</a>  4402 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				N-Team<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Russian<a href="javascript:saveFavorite(79601,19,1)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/20">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Russian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img title="Hearing Impaired" src="https://www.addic7ed.com/images/hi.jpg" width="24" height="24" />0 times edited · 89 Downloads · 697 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=20&amp;lang=19" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div>
+	<div id="container95m">
+		<table class="tabel95">
+			<tr> <!-- table header -->
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+			<td>&nbsp;</td>
+			<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+		    </tr>
+		    <tr>
+			<td>&nbsp;</td>
+			<td>
+	<table width="100%" border="0" align="center" class="tabel95">
+	  <tr>
+	    <td colspan="3" align="center" class="NewsTitle"><img src="https://www.addic7ed.com/images/folder_page.png" width="16" height="16" />Version IMMERSE, Duration: 0.00 &nbsp;<img title="720/1080" src="https://www.addic7ed.com/images/hdicon.png" width="24" height="24" /></td><td colspan="1">
+			<img src="https://www.addic7ed.com/images/movie_faq.png" title="LOL &amp; SYS always work with 720p DIMENSION;	XII & ASAP always work with 720p IMMERSE; 2HD always works with 720p 2HD; BiA always works with 720p BiA; FoV always works with 720p FoV" border="0" width="24" height="24" />
+			<img src="https://www.addic7ed.com/images/subtitle.gif" width="22" height="14" /><a href="/index.php?id=79601&amp;fversion=20&amp;lang=19" onclick="return confirm('You must be a user for a few days before you can make edits.')">New translation</a><img src="https://www.addic7ed.com/images/link.png"  /> uploaded by <a href='/user/91945'>alexwaits</a>  4794 days ago
+		    </td>
+		    <td width="16%">
+		    </td>
+		  </tr>
+		  <tr>
+			  <td colspan="4"></td>
+			  <td class="newsDate" colspan="3">
+				<img src="https://www.addic7ed.com/images/invisible.gif" />
+			  </td>
+		  </tr><tr><td width="10%" rowspan="2" valign="top">&nbsp;&nbsp;&nbsp;</td>
+			<td width="1%" rowspan="2" valign="top"><img src="https://www.addic7ed.com/images/invisible.gif" />
+			</td>
+			<td width="21%" class="language">Russian<a href="javascript:saveFavorite(79601,19,0)"><img title="Start following..." src="https://www.addic7ed.com/images/icons/favorite.png" height="20" width="20" border="0" /></a>    
+			</td>
+			<td width="19%"><b>Completed
+		    </b>
+		    </td>
+		    <td colspan="3"><a class="face-button" href="/original/79601/11">  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Download
+  </div>
+          <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Russian
+  </div></a></td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2" class="newsDate" style="padding: 15px 0";><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" /><img src="https://www.addic7ed.com/images/icons/invisible.gif" width="1" height="1" />0 times edited · 184 Downloads · 638 sequences
+		</td>
+		    <td colspan="3"><img border="0" src="https://www.addic7ed.com/images/edit.png" width="24" height="24" /><a href="/index.php?id=79601&amp;fversion=11&amp;lang=19" onclick="return confirm('You must be a user for a few days before you can make edits.')">view &amp; edit</a>&nbsp;</table>
+				</td>
+				<td>&nbsp;</td>
+			    </tr>
+			    <tr> <!-- table footer -->
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+				<td>&nbsp;</td>
+				<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+			    </tr>
+			</table>
+		    </div><div align="center">
+		</div><p>
+		</p>
+			<p>&nbsp;</p>
+		<center>
+
+					 
+		</center>
+	
+		<br />
+			<div id="container95m">
+			
+				<table class="tabel95">
+					<tr> <!-- table header -->
+					<td class="tablecorner"><img src="https://www.addic7ed.com/images/tl.gif" /></td>
+					<td>&nbsp;</td>
+					<td class="tablecorner"><img src="https://www.addic7ed.com/images/tr.gif" /></td>
+				    </tr>
+				    <tr>
+					<td>&nbsp;</td>
+					<td>
+						<span id="comments">
+						</span>
+					</td>
+					<td>&nbsp;</td>
+				    </tr>
+				    <tr> <!-- table footer -->
+					<td class="tablecorner"><img src="https://www.addic7ed.com/images/bl.gif" /></td>
+					<td>&nbsp;</td>
+					<td class="tablecorner"><img src="https://www.addic7ed.com/images/br.gif" /></td>
+				    </tr>
+				</table>
+			    </div>
+
+
+		<script type="text/javascript">
+			function carga()
+	{
+var subID='79601';		$("comments").innerHTML = '<img src="https://www.addic7ed.com/images/loader.gif">';
+		var myRequest = new Request({
+		    url: '/ajax_getComments.php',
+		    method: 'get',
+		    onSuccess: function(responseText){
+			$("comments").innerHTML = responseText;
+		    }
+		});
+		myRequest.send('id='+subID);
+	}
+		
+	function enviar()
+	{
+		var paramString = $("newc").toQueryString(); 
+		$("comments").innerHTML = '<img src="https://www.addic7ed.com/images/loader.gif">';
+                var myRequest = new Request({
+                    url: '/ajax_getComments.php',
+                    method: 'post',
+                    onSuccess: function(responseText){
+			$("comments").innerHTML = responseText;
+                    }
+                });
+                myRequest.send(paramString);
+	
+		return false;
+	}
+		
+	function notifyModerator(fversion, lang)
+	{
+var subID='79601';		
+		if (confirm('Are you sure that you want to report a problem to the moderators?'))
+		{
+			var myRequest = new Request({
+			    url: '/ajax_notify.php',
+			    method: 'get',
+			    onSuccess: function(responseText){
+				alert("The notification has sent to the moderators. Please, be patient");
+			    }
+			});
+			myRequest.send('id='+subID+'&fversion='+fversion+'&lang='+lang);
+
+			$("comments").innerHTML = '<img src="https://www.addic7ed.com/images/loader.gif">';
+		}
+	}
+
+
+	function addCorrection(fversion, lang)
+	{
+var subID='79601';		
+		if (confirm('Are you sure you want to correct this subtitle??'))
+		{
+			var myRequest = new Request({
+                            url: '/ajax_correction.php',
+                            method: 'get',
+                            onSuccess: function(responseText){
+				alert("Subtitle added to Corrections page. Please correct it or announce that you bail");
+                            }
+                        });
+                        myRequest.send('id='+subID+'&fversion='+fversion+'&lang='+lang);
+		}
+	}
+
+	function delComment(cid)
+	{
+		var myRequest = new Request({
+		    url: '/ajax_delComment.php',
+		    method: 'get',
+		    onSuccess: function(responseText){
+//			alert("Subtitle added to Corrections page. Please correct it or announce that you bail");
+		    }
+		});
+		myRequest.send('cid='+cid);
+		
+		$("comments").innerHTML = "<img src='https://www.addic7ed.com/images/loader.gif' />";
+
+		var myRequest = new Request({
+                    url: '/ajax_getComments.php',
+                    method: 'get',
+                    onSuccess: function(responseText){
+			    $("comments").innerHTML = responseText;
+		    }       
+                });     
+		myRequest.send('cid='+cid);
+	}
+
+	window.addEvent('domready', function(){ carga(); });	
+		</script>
+		<center>
+		
+<center><table border="0" width="90%">
+<tr>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" " />Addic7ed</td>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" " />Popular Shows</td>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" " />Useful</td>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" " />Forums</td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/shows.php">Browse By Shows</a></div></td>
+<td><div id="footermenu"><a href="https://www.addic7ed.com/show/8439">Sex/Life</a></div></td>
+<td><div id="footermenu"><a href="/shows-schedule">TV Shows Schedule</a></div></td>
+<td><div id="footermenu"><a href="http://www.sub-talk.net/topic/1031-changelog/">Site Changelog</a></div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/movie-subtitles">Browse By Movies</a></div></td>
+<td><div id="footermenu"><a href="https://www.addic7ed.com/show/8435">Loki</a></div></td>
+<td><div id="footermenu"><a href="http://www.sub-talk.net/topic/2784-frequently-asked-questions/">Frequently Asked Questions</a></div></td>
+<td><div id="footermenu">Support Us</div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/top-uploaders">Top Uploaders</a></div></td>
+<td><div id="footermenu"><a href="https://www.addic7ed.com/show/8470">Resident Evil</a></div></td>
+<td><div id="footermenu">RSS Feeds</div></td>
+<td><div id="footermenu">Premium Accounts</div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/log.php?mode=downloaded">Top Downloads</a></div></td>
+<td><div id="footermenu"><a href="https://www.addic7ed.com/show/8428">Sweet Tooth</a></div></td>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" "/>Tutorials</td>
+<td><div id="footermenu"><a href="http://sub-talk.net/thread-6-1-1.html">Video Formats</a></div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/log.php?mode=news">All News</a></div></td>
+<td><div id="footermenu"><a href="https://www.addic7ed.com/show/121">Gossip Girl</a></div></td>
+<td><div id="footermenu"><a href="http://www.sub-talk.net/topic/338-guide-to-syncing-with-subtitleedit/page__p__1485__hl__+++sync__fromsearch__1#entry1485">How to Synchronize Subtitles</a></div></td>
+<td><div id="footermenu">Frequently Asked Questions</div></td>
+</tr> 
+<tr>
+<td><div id="footermenu"><a href="http://www.sub-talk.net">Sub-Talk Forums</a></div></td>
+<td><div id="footermenu"><a href="/show/1277">Shameless (US)</a></div></td>
+<td><div id="footermenu">What Are Subtitles</div></td>
+<td><div id="footermenu"><a href="http://sub-talk.net/index.php?gid=7">TV Shows Talk</a></div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/latest_comments.php">Latest Comments</a></div></td>
+<td><div id="footermenu"><a href="/show/126">The Big Bang Theory</a></div></td>
+<td><div id="footermenu">New Translation Tutorial</div></td>
+<td><div id="footermenu"><a href="http://sub-talk.net/index.php?gid=22">Movies Talk</a></div></td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="https://scooterrank.com/coupons/ausom" target="_blank" rel="noopener">Ausom discount code</a></div></td>
+<td><div id="footermenu"><a href="/show/130">Family Guy</a></div></td>
+<td><div id="footermenu">Upload a New Subtitle Tutorial</div></td>
+<td class="NewsTitle"><img width="20" height="20" src="https://www.addic7ed.com/images/television.png" alt="TV" /><img src="https://www.addic7ed.com/images/invisible.gif" alt=" " />Stats</td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="https://scooterrank.com/coupons/duotts" target="_blank" rel="noopener">Duotts discount code</a></div></td>
+<td><div id="footermenu"><a href="https://scooterrank.com/coupons/touroll" target="_blank" rel="noopener">Touroll Ebikes discount code</a></div></td>
+<td><div id="footermenu"><a href="https://scooterrank.com/coupons/kukirin" target="_blank" rel="noopener">KuKirin discount code</a></div></td>
+<td align="left">.
+				</td>
+</tr>
+<tr>
+<td><div id="footermenu"><a href="/contact.php">Contact</a></div></td>
+<td><div id="footermenu"><a href="/show/15">House</a></div></td>
+<td><div id="footermenu"><a href="http://www.popupstore.ro/" alt="Agentie Marketing Digital" title="Agentie Marketing Digital">Agentie Marketing Digital</a></div></td>
+<td>
+</td>
+</tr>
+</table></center>
+</center>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("<script src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'></script>"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10775680-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+                                                                                      
+build time: 0.72161388397217 <br>		</center>
+		
+		</body>
+		</html>
+
+

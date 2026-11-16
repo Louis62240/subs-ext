@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [{ "header": "Referer", "operation": "set", "value": "https://www.addic7ed.com/" }]
+    },
+    "condition": {
+      "regexFilter": "^https://(www\\.)?addic7ed\\.com/(original|updated)/",
+      "resourceTypes": ["xmlhttprequest", "other"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [{ "header": "Referer", "operation": "set", "value": "https://yifysubtitles.ch/" }]
+    },
+    "condition": {
+      "regexFilter": "^https://yifysubtitles\\.ch/subtitle/",
+      "resourceTypes": ["xmlhttprequest", "other"]
+    }
+  }
+]

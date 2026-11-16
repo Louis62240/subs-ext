@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Sous-titres auto",
+  "version": "1.0.0",
+  "description": "Trouve, télécharge et affiche des sous-titres français sur n'importe quelle vidéo, synchronisés et réglables au clavier.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "activeTab", "scripting", "webNavigation", "offscreen", "declarativeNetRequest", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Sous-titres auto",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "options_page": "options.html",
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "referer_rules", "enabled": true, "path": "rules.json" }]
+  },
+  "commands": {
+    "offset-minus": {
+      "suggested_key": { "default": "Alt+Shift+G" },
+      "description": "Sous-titres : décalage −0,1 s"
+    },
+    "offset-plus": {
+      "suggested_key": { "default": "Alt+Shift+H" },
+      "description": "Sous-titres : décalage +0,1 s"
+    },
+    "toggle-subs": {
+      "suggested_key": { "default": "Alt+Shift+V" },
+      "description": "Sous-titres : afficher / masquer"
+    },
+    "auto-subs": {
+      "description": "Sous-titres : chercher et appliquer le meilleur résultat"
+    }
+  }
+}

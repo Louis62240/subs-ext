@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Sous-titres auto — Options</title>
+<link rel="stylesheet" href="popup.css">
+<style>
+  body { width: auto; max-width: 720px; margin: 0 auto; padding: 24px 16px; font-size: 14px; }
+  h1 { font-size: 20px; margin-bottom: 16px; }
+  h2 { font-size: 15px; margin: 24px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+  .field { display: flex; align-items: center; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+  .field > span:first-child { min-width: 200px; color: var(--muted); }
+  input[type=range] { width: 180px; }
+  .providers { list-style: none; padding: 0; margin: 0; }
+  .providers li { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 4px; }
+  .providers li .name { flex: 1; }
+  .providers li .kind { color: var(--muted); font-size: 12px; }
+  .providers button { padding: 1px 8px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+  td, th { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .st-ok { color: var(--ok); font-weight: 600; } .st-empty, .st-challenge { color: var(--warn); font-weight: 600; } .st-broken { color: var(--err); font-weight: 600; }
+  .preview { margin-top: 10px; position: relative; height: 140px; border-radius: 8px; overflow: hidden;
+             background: linear-gradient(135deg, #4a7c59, #87a96b 40%, #e8d5a3); }
+  .preview .cue { position: absolute; left: 5%; right: 5%; text-align: center; font: 600 22px/1.25 Arial, sans-serif; }
+  .preview .cue span { padding: 0 .3em; border-radius: .15em; }
+  .saved { color: var(--ok); margin-left: 8px; opacity: 0; transition: opacity .3s; }
+  .saved.on { opacity: 1; }
+</style>
+</head>
+<body>
+<h1>Sous-titres auto — Options <span id="saved" class="saved">Enregistré</span></h1>
+
+<h2>Recherche</h2>
+<label class="field"><span>Langue par défaut</span>
+  <select id="lang">
+    <option value="fr">Français</option>
+    <option value="en">Anglais</option>
+    <option value="es">Espagnol</option>
+    <option value="de">Allemand</option>
+    <option value="it">Italien</option>
+    <option value="pt">Portugais</option>
+  </select>
+</label>
+<label class="field"><span>Mode auto</span>
+  <input id="auto" type="checkbox">
+  <small>Réappliquer automatiquement le dernier sous-titre et son décalage quand je rouvre un contenu déjà vu.</small>
+</label>
+
+<div class="field"><span>Sources (ordre de préférence)</span></div>
+<ol id="providers" class="providers"></ol>
+<div class="field">
+  <button id="testBtn">Tester les sources</button>
+  <button id="clearCacheBtn">Vider le cache</button>
+  <span id="toolMsg"></span>
+</div>
+<table id="testTable" hidden>
+  <thead><tr><th>Source</th><th>Test</th><th>Statut</th><th>Détail</th></tr></thead>
+  <tbody></tbody>
+</table>
+
+<h2>Apparence des sous-titres</h2>
+<label class="field"><span>Taille (% de la hauteur vidéo)</span>
+  <input id="size" type="range" min="2" max="15" step="0.5"> <output id="sizeOut"></output>
+</label>
+<label class="field"><span>Couleur du texte</span>
+  <input id="color" type="color">
+</label>
+<label class="field"><span>Fond semi-transparent</span>
+  <input id="background" type="checkbox">
+  <input id="bgOpacity" type="range" min="0.1" max="1" step="0.05" title="Opacité du fond">
+</label>
+<label class="field"><span>Position verticale (% depuis le bas)</span>
+  <input id="position" type="range" min="0" max="40" step="1"> <output id="positionOut"></output>
+</label>
+<label class="field"><span>Mode de rendu</span>
+  <select id="render">
+    <option value="overlay">Overlay (recommandé)</option>
+    <option value="native">Piste native (addTextTrack + VTTCue)</option>
+  </select>
+  <small>La piste native sert de secours pour les lecteurs où l'overlay pose problème (style limité).</small>
+</label>
+<div class="preview"><div id="previewCue" class="cue"><span>Aperçu : <i>« Ça m'a l'air très bien ! »</i></span></div></div>
+
+<script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Tests des parsers (fixtures)</title>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 16px; background: #fff; color: #111; }
+  .ok { color: #137333; } .ko { color: #c5221f; font-weight: 600; }
+  pre { background: #f4f4f4; padding: 6px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Parsers des providers sur les pages réelles sauvegardées</h1>
+<p>Servir le dossier de l'extension : <code>python3 -m http.server 8001</code> puis ouvrir
+<code>http://localhost:8001/test/providers.html</code>.</p>
+<div id="out"></div>
+<script type="module">
+import * as soustitres from '../lib/providers/soustitres.js';
+import * as addic7ed from '../lib/providers/addic7ed.js';
+import * as tvsubtitles from '../lib/providers/tvsubtitles.js';
+import * as yify from '../lib/providers/yify.js';
+import { isChallenge } from '../lib/providers/_base.js';
+
+const out = document.getElementById('out');
+const results = [];
+async function load(name) {
+  const res = await fetch(`fixtures/${name}`);
+  const buf = await res.arrayBuffer();
+  // les pages tvsubtitles sont en ISO-8859-1, les autres en UTF-8
+  let text;
+  try { text = new TextDecoder('utf-8', { fatal: true }).decode(buf); } catch { text = new TextDecoder('windows-1252').decode(buf); }
+  return text;
+}
+async function doc(name) {
+  return new DOMParser().parseFromString(await load(name), 'text/html');
+}
+async function t(name, fn) {
+  try {
+    const info = await fn();
+    results.push({ name, ok: true, info });
+  } catch (e) {
+    results.push({ name, ok: false, info: e.message });
+  }
+}
+function assert(c, msg) { if (!c) throw new Error(msg); }
+
+// --- sous-titres.eu
+await t('soustitres.search (Breaking Bad)', async () => {
+  const r = soustitres.parsers.search(await doc('sstitres-search-breaking-bad.html'), 'https://www.sous-titres.eu/search.html?q=breaking+bad');
+  const bb = r.items.find((i) => i.title === 'Breaking Bad');
+  assert(bb && bb.type === 'episode' && bb.url === 'https://www.sous-titres.eu/series/breaking_bad.html', 'fiche Breaking Bad');
+  const el = r.items.find((i) => /El Camino/.test(i.title));
+  assert(el && el.type === 'movie' && el.year === 2019 && el.altTitle === 'El Camino : Un film Breaking Bad', 'El Camino : ' + JSON.stringify(el));
+  assert(r.expected, 'expected');
+  return `${r.items.length} fiches`;
+});
+await t('soustitres.search (Inception)', async () => {
+  const r = soustitres.parsers.search(await doc('sstitres-search-inception.html'), 'https://www.sous-titres.eu/search.html?q=inception');
+  const f = r.items.find((i) => i.title === 'Inception');
+  assert(f && f.year === 2010 && f.url.endsWith('/films/inception.html'), JSON.stringify(r.items.slice(0, 3)));
+  return `${r.items.length} fiches`;
+});
+await t('soustitres.show (série)', async () => {
+  const r = soustitres.parsers.show(await doc('sstitres-serie-breaking-bad.html'), 'https://www.sous-titres.eu/series/breaking_bad.html');
+  const e = r.items.find((i) => i.filename === 'Breaking.Bad.5x16.FR.FBK.zip');
+  assert(e && e.url === 'https://www.sous-titres.eu/series/download/55z04ig3aq16zh4/Breaking.Bad.5x16.FR.FBK.zip', 'lien 5x16');
+  assert(e.langs.join() === 'fr' && e.episodeLabel === '5x16' && e.team === 'La Fabrique', JSON.stringify(e));
+  const enfr = r.items.find((i) => i.filename === 'Breaking.Bad.1x07.ENFR.zip');
+  assert(enfr.langs.join() === 'en,fr', 'langues ENFR');
+  assert(r.title === 'Breaking Bad', 'titre');
+  return `${r.items.length} lignes`;
+});
+await t('soustitres.show (pack « 601@603 » masqué par Cloudflare)', async () => {
+  const r = soustitres.parsers.show(await doc('sstitres-serie-the-chosen.html'), 'https://www.sous-titres.eu/series/the_chosen.html');
+  const e = r.items.find((i) => i.filename.includes('601@603'));
+  assert(e && e.release === 'The.Chosen.601@603.DVDRip.Z2.AMZN.FR', JSON.stringify(e));
+  return `${r.items.length} lignes`;
+});
+await t('soustitres.show (film)', async () => {
+  const r = soustitres.parsers.show(await doc('sstitres-film-inception.html'), 'https://www.sous-titres.eu/films/inception.html');
+  assert(r.items.length >= 5 && r.items[0].url === 'https://www.sous-titres.eu/films/download/hkysl6er07d42d8/Inception.%282010%29.Z1.REFiNED.zip', JSON.stringify(r.items[0]));
+  return `${r.items.length} lignes`;
+});
+
+// --- addic7ed
+await t('addic7ed.page (épisode)', async () => {
+  const r = addic7ed.parsers.page(await doc('addic7ed-episode-bb-5x16.html'), 'https://www.addic7ed.com/serie/Breaking_Bad/5/16/Felina');
+  const fr = r.items.filter((i) => i.language === 'French');
+  assert(fr.length === 5, `5 FR, obtenu ${fr.length}`);
+  const web = fr.find((i) => i.version === '720p.1080p.WEB-DL');
+  assert(web && web.url === 'https://www.addic7ed.com/original/79601/22' && web.downloads === 867 && web.completed, JSON.stringify(web));
+  const hi = r.items.find((i) => i.hearingImpaired);
+  assert(hi, 'un sous-titre malentendants');
+  assert(r.title.startsWith('Breaking Bad - 05x16'), r.title);
+  return `${r.items.length} sous-titres dont ${fr.length} FR`;
+});
+await t('addic7ed.page (film, lien « Most Updated »)', async () => {
+  const r = addic7ed.parsers.page(await doc('addic7ed-movie-inception.html'), 'https://www.addic7ed.com/movie/105322');
+  const fr = r.items.find((i) => i.language === 'French');
+  assert(fr && fr.url === 'https://www.addic7ed.com/updated/8/105322/0' && fr.version === 'Bluray', JSON.stringify(fr));
+  assert(r.title === 'Inception (2010)', r.title);
+  return `${r.items.length} sous-titres`;
+});
+await t('addic7ed.list (recherche ambiguë)', async () => {
+  const r = addic7ed.parsers.list(await doc('addic7ed-search-office.html'), 'https://www.addic7ed.com/search.php?search=the+office');
+  const us = r.items.find((i) => i.title === 'The Office (US)' && i.season === 2 && i.episode === 1);
+  assert(us && us.url === 'https://www.addic7ed.com/serie/The_Office_%28US%29/2/1/The_dundies', JSON.stringify(us));
+  return `${r.items.length} liens`;
+});
+
+// --- tvsubtitles
+await t('tvsubtitles.search', async () => {
+  const r = tvsubtitles.parsers.search(await doc('tvsubtitles-search-bb.html'), 'https://www.tvsubtitles.net/search2.php');
+  assert(r.items[0].id === '133' && r.items[0].title === 'Breaking Bad' && r.items[0].year === 2008, JSON.stringify(r.items[0]));
+  return `${r.items.length} séries`;
+});
+await t('tvsubtitles.season', async () => {
+  const r = tvsubtitles.parsers.season(await doc('tvsubtitles-show-133-s5.html'), 'https://www.tvsubtitles.net/tvshow-133-5.html');
+  const e = r.items.find((i) => i.episode === 16);
+  assert(e && e.url === 'https://www.tvsubtitles.net/episode-45458.html' && e.title === 'Felina', JSON.stringify(e));
+  return `${r.items.length} épisodes`;
+});
+await t('tvsubtitles.episode', async () => {
+  const r = tvsubtitles.parsers.episode(await doc('tvsubtitles-episode-45458.html'), 'https://www.tvsubtitles.net/episode-45458.html');
+  const fr = r.items.find((i) => i.lang === 'fr');
+  assert(fr && fr.subId === '248344' && fr.release === 'ASAP-IMMERSE' && fr.rip === 'HDTV', JSON.stringify(fr));
+  return `${r.items.length} sous-titres`;
+});
+await t('tvsubtitles.download (URL reconstituée)', async () => {
+  const r = tvsubtitles.parsers.download(await doc('tvsubtitles-download-248344.html'), 'https://www.tvsubtitles.net/download-248344.html');
+  assert(r.items[0]?.url === 'https://www.tvsubtitles.net/files/Breaking%20Bad_5x16_HDTV.ASAP-IMMERSE.fr(1).zip', JSON.stringify(r.items));
+  return r.items[0].url;
+});
+
+// --- yify
+await t('yify.movie', async () => {
+  const r = yify.parsers.movie(await doc('yify-movie-inception.html'), 'https://yifysubtitles.ch/movie-imdb/tt1375666');
+  const fr = r.items.filter((i) => i.language === 'French');
+  assert(fr.length > 0 && fr[0].url === 'https://yifysubtitles.ch/subtitles/inception-2010-french-yify-392249', JSON.stringify(fr[0]));
+  assert(fr[0].release.startsWith('Inception.Making.of.2010'), fr[0].release);
+  assert(r.expected, 'expected');
+  return `${r.items.length} sous-titres dont ${fr.length} FR`;
+});
+await t('yify.subtitle', async () => {
+  const r = yify.parsers.subtitle(await doc('yify-subtitle-392249.html'), 'https://yifysubtitles.ch/subtitles/inception-2010-french-yify-392249');
+  assert(r.items[0]?.url === 'https://yifysubtitles.ch/subtitle/inception-2010-french-yify-392249.zip', JSON.stringify(r.items));
+  return r.items[0].url;
+});
+
+// --- challenges
+await t('détection challenge Cloudflare (subdl)', async () => {
+  assert(isChallenge(403, null, await load('challenge-cloudflare-subdl.html')), 'non détecté');
+});
+await t('détection challenge Anubis (opensubtitles.org)', async () => {
+  assert(isChallenge(401, null, await load('challenge-anubis-opensubtitles.html')), 'non détecté');
+});
+await t('pas de faux positif sur une vraie page', async () => {
+  assert(!isChallenge(200, null, await load('sstitres-search-inception.html')), 'faux positif');
+});
+
+// --- « site changé » : une page vide là où on attend des résultats
+await t('page modifiée → expected sans items', async () => {
+  const d = new DOMParser().parseFromString('<ul class="tabs-normal"><li id="searchTabsAll"><a>Tout (12)</a></li></ul><div id="newDesign"></div>', 'text/html');
+  const r = soustitres.parsers.search(d, 'https://www.sous-titres.eu/search.html?q=x');
+  assert(r.items.length === 0 && r.expected === true, JSON.stringify(r));
+});
+
+const fails = results.filter((r) => !r.ok).length;
+out.innerHTML = results.map((r) => `<div class="${r.ok ? 'ok' : 'ko'}">${r.ok ? '✓' : '✗'} ${r.name}${r.info ? ' — ' + String(r.info).replace(/</g, '&lt;') : ''}</div>`).join('') +
+  `<p><b>${results.length - fails} ok, ${fails} échec(s)</b></p>`;
+window.__results = { results, fails };
+document.title = fails ? `ÉCHEC (${fails})` : 'OK';
+</script>
+</body>
+</html>

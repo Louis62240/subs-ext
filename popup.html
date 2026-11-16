@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Sous-titres auto</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <h1>Sous-titres auto</h1>
+  <a id="openOptions" href="#" title="Options">Options</a>
+</header>
+
+<section id="status" class="status">
+  <div id="videoStatus" class="pill">…</div>
+  <div id="subStatus" class="sub-status"></div>
+</section>
+
+<form id="form" autocomplete="off">
+  <label class="wide">Titre
+    <input id="title" required placeholder="ex. Breaking Bad">
+  </label>
+  <div class="row">
+    <label>Année <input id="year" type="number" min="1900" max="2100" placeholder="—"></label>
+    <label>Saison <input id="season" type="number" min="0" max="99" placeholder="—"></label>
+    <label>Épisode <input id="episode" type="number" min="0" max="9999" placeholder="—"></label>
+    <label>Langue
+      <select id="lang">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="de">DE</option>
+        <option value="it">IT</option>
+        <option value="pt">PT</option>
+      </select>
+    </label>
+  </div>
+  <div class="row buttons">
+    <button type="submit" id="searchBtn" class="primary">Chercher</button>
+    <button type="button" id="autoBtn" title="Chercher et appliquer directement le meilleur résultat">Auto</button>
+    <label class="file-btn" title="Secours : charger un fichier depuis le disque">
+      Charger un fichier .srt
+      <input id="file" type="file" accept=".srt,.vtt,.ass,.ssa,.zip">
+    </label>
+  </div>
+</form>
+
+<div id="message" class="message" hidden></div>
+<div id="errors"></div>
+<ol id="results" class="results"></ol>
+
+<section id="controls" class="controls">
+  <div class="ctrl-row">
+    <span class="ctrl-label">Décalage <b id="offsetValue">0,0 s</b></span>
+    <button data-delta="-1">−1 s</button>
+    <button data-delta="-0.1">−0,1</button>
+    <button data-delta="0.1">+0,1</button>
+    <button data-delta="1">+1 s</button>
+    <button id="resetOffset" title="Remettre à zéro">0</button>
+  </div>
+  <div class="ctrl-row">
+    <span class="ctrl-label">Taille</span>
+    <button id="sizeMinus">A−</button>
+    <button id="sizePlus">A+</button>
+    <button id="toggleBtn">Masquer</button>
+    <button id="clearBtn" title="Retirer les sous-titres de la vidéo">Retirer</button>
+  </div>
+  <p class="hint">Dans la vidéo : <kbd>G</kbd>/<kbd>H</kbd> ±0,1 s · <kbd>Maj</kbd>+<kbd>G</kbd>/<kbd>H</kbd> ±1 s · <kbd>V</kbd> afficher/masquer</p>
+</section>
+
+<script type="module" src="popup.js"></script>
+</body>
+</html>
